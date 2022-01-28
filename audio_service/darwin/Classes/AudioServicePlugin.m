@@ -289,7 +289,8 @@ static NSMutableDictionary *nowPlayingInfo = nil;
     updated |= [self updateNowPlayingField:MPNowPlayingInfoPropertyElapsedPlaybackTime value:[NSNumber numberWithDouble:([position doubleValue] / 1000)]];
     MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
     if (@available(iOS 13.0, macOS 10.12.2, *)) {
-        center.playbackState = playing ? MPNowPlayingPlaybackStatePlaying : MPNowPlayingPlaybackStatePaused;
+        // To Be enabled for MacOS support
+        // center.playbackState = playing ? MPNowPlayingPlaybackStatePlaying : MPNowPlayingPlaybackStatePaused;
     }
     if (updated) {
         //NSLog(@"### updating nowPlayingInfo");
